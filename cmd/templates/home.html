@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestoPort</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RestoPort</h1>
+        <p class="description">
+            Welcome to RestoPort! This is the place to view all of the flights of the day at the gates you wish.
+        </p>
+
+        <div class="button-container">
+            <!-- Carlos and Pepes Option -->
+            <button class="option-button" onclick="handleCarlosAndPepes()">
+                Carlos and Pepes
+            </button>
+
+            <!-- Ubar Option -->
+            <button class="option-button" onclick="handleUbar()">
+                Ubar
+            </button>
+
+            <!-- Custom Option -->
+            <div class="custom-option">
+                <button class="option-button" onclick="handleCustom()">
+                    Custom
+                </button>
+                <div class="input-fields">
+                    <input type="number" id="gate1" placeholder="Enter Gate 1" min="0">
+                    <input type="number" id="gate2" placeholder="Enter Gate 2" min="0">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript functions to handle button clicks
+        function handleCarlosAndPepes() {
+            // Add logic to handle Carlos and Pepes option
+            window.location.href="/CarlosFlights"
+        }
+
+        function handleUbar() {
+            // Add logic to handle Ubar option
+            window.location.href="/UbarFlights"
+        }
+
+        function handleCustom() {
+            const gate1 = parseInt(document.getElementById("gate1").value, 10);
+            const gate2 = parseInt(document.getElementById("gate2").value, 10);
+
+            if (isNaN(gate1) || isNaN(gate2)) {
+                alert("Please enter valid numbers for both gates.");
+                return;
+            }
+
+            if (gate1 >= gate2) {
+                alert("Gate 1 must be lower than Gate 2. Please enter valid gate numbers.");
+                return;
+            }
+
+            window.location.href = `/CustomFlights?gate1=${gate1}&gate2=${gate2}`;
+        }
+    </script>
+</body>
+</html>

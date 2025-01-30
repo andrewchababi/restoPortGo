@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights YUL</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="home-link">← Back to Homepage</a>
+    </nav>
+    <table>
+        <caption>
+            Flights for today at YUL airport
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">Airline</th>
+                <th scope="col">Gate</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Updated Time</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Status</th>
+                <th scope="col">Flight No.</th>    
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr 
+            {{ if eq .Status "Departed" }} class="departed"
+            {{ else if eq .Status "Delayed" }} class="delayed"            
+            {{ else }} class="onTime"
+            {{ end }}>
+                <td>{{ .AirlineName }}</td>
+                <td>{{ .Gate }}</td>
+                <td>{{ .Time }}</td>
+                <td>{{ .UpdatedTime }}</td>
+                <td>{{ .Destination }}</td>
+                <td>{{ .Status }}</td>
+                <td>{{ .UniqueDisplayNo }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</body>
+</html>
