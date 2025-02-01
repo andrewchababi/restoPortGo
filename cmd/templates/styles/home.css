@@ -1,3 +1,60 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Menu Styling */
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+}
+
+.navbar .menu li {
+    display: inline;
+}
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.navbar .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Ensure content does not overlap navbar */
+.container {
+    margin-top: 80px;
+}
+
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;

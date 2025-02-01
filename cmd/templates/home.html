@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="/styles/home.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a href="#" class="logo">RestoPort</a>
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/flights">Flights</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
         <h1>RestoPort</h1>
         <p class="description">
@@ -15,17 +25,12 @@
         </p>
 
         <div class="button-container">
-            <!-- Carlos and Pepes Option -->
             <button class="option-button" onclick="handleCarlosAndPepes()">
                 Carlos and Pepes
             </button>
-
-            <!-- Ubar Option -->
             <button class="option-button" onclick="handleUbar()">
                 Ubar
             </button>
-
-            <!-- Custom Option -->
             <div class="custom-option">
                 <button class="option-button" onclick="handleCustom()">
                     Custom
@@ -39,15 +44,12 @@
     </div>
 
     <script>
-        // JavaScript functions to handle button clicks
         function handleCarlosAndPepes() {
-            // Add logic to handle Carlos and Pepes option
-            window.location.href="/CarlosFlights"
+            window.location.href="/CarlosFlights";
         }
 
         function handleUbar() {
-            // Add logic to handle Ubar option
-            window.location.href="/UbarFlights"
+            window.location.href="/UbarFlights";
         }
 
         function handleCustom() {
